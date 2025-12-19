@@ -1,0 +1,46 @@
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  background-color: #f7fafc;
+  min-height: calc(100vh - 200px);
+}
+
+.notes-grid.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: none;
+}
+
+.empty-state {
+  text-align: center;
+  color: #718096;
+  font-size: 1.4rem;
+  margin-top: 80px;
+  font-weight: 500;
+}
+
+.empty-state::before {
+  content: '📝';
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .notes-grid {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .empty-state {
+    font-size: 1.2rem;
+    margin-top: 60px;
+  }
+
+  .empty-state::before {
+    font-size: 2.5rem;
+  }
+}
